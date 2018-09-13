@@ -44,7 +44,7 @@ describe('next/timefuture', function () {
   it('nx.timefuture 5.今年	m-d H:M', function () {
     var now = '2018-06-14 17:12:50'
     var rs1 = nx.timefuture('2018-06-18 17:17:50', now);
-    assert.equal(rs1, '6-18');
+    assert.equal(rs1, '6-18 17:17');
   });
 
   it('nx.timefuture 6.更晚	Y-m-d', function () {

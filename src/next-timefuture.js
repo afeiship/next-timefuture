@@ -18,18 +18,19 @@
       var diff_s = (publishTs - nowTs) / 1000;
       var diff_m = diff_s / 60;
       var diff_h = diff_m / 60;
+      var hours_minutes = publish.getHours() + ':' + publish.getMinutes();
 
       switch (true) {
         case diff_s > 0 && diff_s < 60 * 5:
           return Math.floor(diff_s / 60) + '分' + parseInt(diff_s) % 60 + '秒后';
         case diff_s >= 5 * 60 && isToday:
-          return '今天' + publish.getHours() + ':' + publish.getMinutes();
+          return '今天' + hours_minutes;
         case isTomorrow:
-          return '明天' + publish.getHours() + ':' + publish.getMinutes();
+          return '明天' + hours_minutes;
         case isAfterTomorrow:
-          return '后天' + publish.getHours() + ':' + publish.getMinutes();
+          return '后天' + hours_minutes;
         case isYear:
-          return (publish.getMonth() + 1) + '-' + publish.getDate();
+          return (publish.getMonth() + 1) + '-' + publish.getDate() + ' ' + hours_minutes;
         default:
           return inValue.slice(0, 10);
       }
