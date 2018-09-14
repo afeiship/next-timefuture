@@ -9,11 +9,10 @@ describe('next/timefuture', function () {
     var rs1 = nx.timefuture('2018-06-14 17:17:49', now);
     var rs2 = nx.timefuture('2018-06-14 17:12:51', now);
     var rs3 = nx.timefuture('2018-06-14 17:15:21', now);
-    // console.log(rs1, rs2, rs3);
 
-    assert.equal(rs1, '4分59秒后');
-    assert.equal(rs2, '0分1秒后');
-    assert.equal(rs3, '2分31秒后');
+    assert.equal(rs1, '04分59秒后');
+    assert.equal(rs2, '00分01秒后');
+    assert.equal(rs3, '02分31秒后');
   });
 
   it('nx.timefuture 2.今天	今天H:M', function () {
@@ -44,7 +43,7 @@ describe('next/timefuture', function () {
   it('nx.timefuture 5.今年	m-d H:M', function () {
     var now = '2018-06-14 17:12:50'
     var rs1 = nx.timefuture('2018-06-18 17:17:50', now);
-    assert.equal(rs1, '6-18 17:17');
+    assert.equal(rs1, '06-18 17:17');
   });
 
   it('nx.timefuture 6.更晚	Y-m-d', function () {

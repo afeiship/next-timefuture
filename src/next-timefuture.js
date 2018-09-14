@@ -3,7 +3,7 @@
   var global = global || this || window || Function('return this')();
   var nx = global.nx || require('next-js-core2');
   var pad = function (inValue) {
-    return inValue < 10 ? '0' + inValue : inValue;
+    return inValue < 10 ? ('0' + inValue) : inValue;
   };
 
   nx.timefuture = function (inValue, inNow) {
@@ -25,7 +25,7 @@
 
       switch (true) {
         case diff_s > 0 && diff_s < 60 * 5:
-          return Math.floor(diff_s / 60) + '分' + parseInt(diff_s) % 60 + '秒后';
+          return pad(Math.floor(diff_s / 60)) + '分' + pad(parseInt(diff_s) % 60) + '秒后';
         case diff_s >= 5 * 60 && isToday:
           return '今天' + hours_minutes;
         case isTomorrow:
@@ -33,7 +33,7 @@
         case isAfterTomorrow:
           return '后天' + hours_minutes;
         case isYear:
-          return (publish.getMonth() + 1) + '-' + publish.getDate() + ' ' + hours_minutes;
+          return pad(publish.getMonth() + 1) + '-' + pad(publish.getDate()) + ' ' + hours_minutes;
         default:
           return inValue.slice(0, 10);
       }
