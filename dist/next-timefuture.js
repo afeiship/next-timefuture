@@ -2,6 +2,9 @@
 
   var global = global || this || window || Function('return this')();
   var nx = global.nx || require('next-js-core2');
+  var pad = function (inValue) {
+    return inValue < 10 ? '0' + inValue : inValue;
+  };
 
   nx.timefuture = function (inValue, inNow) {
     if (inValue) {
@@ -18,7 +21,7 @@
       var diff_s = (publishTs - nowTs) / 1000;
       var diff_m = diff_s / 60;
       var diff_h = diff_m / 60;
-      var hours_minutes = publish.getHours() + ':' + publish.getMinutes();
+      var hours_minutes = pad(publish.getHours()) + ':' + pad(publish.getMinutes());
 
       switch (true) {
         case diff_s > 0 && diff_s < 60 * 5:
