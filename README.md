@@ -20,11 +20,11 @@ console.log(str);
 
 ```conf
 将来	5分钟内	M分S秒后
-今天	今天H:M
-明天	明天H:M
-后天	后天H:M
-今年	m-d H:M
-更晚	Y-m-d
+今天	今天HH:MM
+明天	明天HH:MM
+后天	后天HH:MM
+今年	mm-ddd HH:MM
+更晚	YYYY-mm-dd
 ```
 
 
