@@ -3,7 +3,8 @@
   var global = global || this || window || Function('return this')();
   var nx = global.nx || require('next-js-core2');
   var pad = function (inValue) {
-    return inValue < 10 ? ('0' + inValue) : inValue;
+    var value = inValue.toString()
+    return value[1] ? value : '0' + value;
   };
 
   nx.timefuture = function (inValue, inNow) {
